@@ -1,0 +1,38 @@
+  <link href="../../../assets/css/sb-admin.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../../assets/css/style.css">   
+  <div class="main">
+          <section class="sign-in">
+                  <div class="container">
+                      <div class="signin-content">
+                          <div class="signin-image">
+                              <figure><img src="../../../assets/images/signin-image.jpg" alt="sing up image"></figure>
+                              <a routerLink="/signup" class="signup-image-link">Create an account</a>
+                          </div>
+              
+                          <div class="signin-form">
+                              <h2 class="form-title">Sign in</h2>
+                              <form [formGroup]="LoginForm" (submit)="signIn(LoginForm.value)"  role="form" class="form-horizontal" id="login-form">
+                                      <div class="form-group">
+                                              <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                              <input type="text" formControlName="email" name="email" id="email" class="form-control" placeholder="Email"/>
+                                          </div>
+                                  <div class="form-group">
+                                      <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                                      <input  class="form-control"#pass formControlName="password" type="password" name="password" id="password" placeholder="Password"/>
+                                      <span class="viewer" (click)="myFunction(pass)"><i class="far fa-eye"></i></span>
+                                  </div>
+                                  <div style="margin-top:10px" class="form-group">
+                                      <div class="col-sm-12 controls">  
+                                           <button [disabled]="!LoginForm.valid" id="btn-signup" type="submit" class="btn btn-primary"><i class="icon-hand-right"></i> Sign In</button> 
+                                           <br> <br><br><br><br><br><br><br>                               
+                                           <a routerLink="/changePassword" class="signup-image-link">Change Password</a>
+                                         </div>
+                                     </div>
+                                                            </form>
+                          </div>
+                      </div>
+                  </div>
+              </section>
+  
+  </div>
+  

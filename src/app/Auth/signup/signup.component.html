@@ -1,0 +1,43 @@
+ 
+  <link href="../../../assets/css/sb-admin.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+ <div class="main">
+
+    <!-- Sign up form -->
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Sign up</h2>
+                    <form (submit)="onRegister(signupForm.value)" class="form-horizontal" [formGroup]="signupForm">
+                        <div class="form-group">
+                            <label for="email"><i class="zmdi zmdi-email"></i></label>
+                            <input formControlName="email" type="email" name="email" class="form-control"  placeholder="Your Email"/>
+                            <span *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched" class="spanValid">Please enter your Email</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                            <input formControlName="username" type="text" name="username" class="form-control"  placeholder="UserName"/>
+                            <span *ngIf ="!signupForm.get('username').valid && signupForm.get('username').touched" class="spanValid">Please enter your Username</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                            <input formControlName="password" type="password" name="pass" class="form-control"  placeholder="Password"/>
+                            <span *ngIf ="!signupForm.get('password').valid && signupForm.get('password').touched" class="spanValid">Please enter your password</span>
+                        </div>
+                        <div class="form-group">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button [disabled]="!signupForm.valid" id="btn-signup" value="submit" type="submit" class="btn btn-primary"><i class="icon-hand-right"></i> Sign Up</button>
+                                    </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="signup-image">
+                    <figure><img src="../../../assets/images/signup-image.jpg" alt="sing up image"></figure>
+                    <a routerLink="/login" class="signup-image-link">I am already member</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
